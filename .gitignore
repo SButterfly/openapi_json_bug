@@ -1,0 +1,6 @@
+/openapi_out/.openapi-generator/
+/openapi_out/.openapi-generator-ignore
+/openapi_out/README.md
+/.idea/
+/openapi_json_bug.iml
+/gen/

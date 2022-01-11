@@ -1,0 +1,61 @@
+paths:
+  get:
+    post:
+      operationId: getBySsku
+      tags:
+        - availabilities
+      requestBody:
+        content:
+          application/json:
+            schema:
+              title: Get availabilities request
+              properties:
+                keys:
+                  type: array
+                  items:
+                    $ref: "./common.yaml#/key"
+                warehouseIds:
+                  type: array
+                  items:
+                    type: integer
+                    format: int64
+                    example: 172
+                date:
+                  type: string
+                  format: date
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  title: Availabilities response
+                  properties:
+                    key:
+                      $ref: "./common.yaml#/key"
+                    availabilities:
+                      type: array
+                      items:
+                        title: Availability info
+                        properties:
+                          warehouseId:
+                            type: integer
+                            format: int64
+                          allowInbound:
+                            type: boolean
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: './common.yaml#/apiError'
+        '500':
+          description: Internal error
+          content:
+            application/json:
+              schema:
+                $ref: './common.yaml#/apiError'
+
+components:
+  schemas:

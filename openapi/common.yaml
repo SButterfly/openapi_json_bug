@@ -1,0 +1,37 @@
+key:
+  type: object
+  properties:
+    supplierId:
+      type: integer
+      format: int32
+      nullable: false
+    shopSku:
+      description: shopSku
+      type: string
+      nullable: false
+  example:
+    supplierId: 481979
+    shopSku: "00-00001779"
+
+message:
+  type: object
+  properties:
+    code:
+      type: string
+    text:
+      type: string
+
+
+ok_response:
+  description: OK
+
+apiError:
+  type: object
+  properties:
+    code:
+      type: integer
+      format: int32
+    error:
+      type: string
+    message:
+      type: string

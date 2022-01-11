@@ -1,0 +1,10 @@
+openapi: 3.0.3
+
+info:
+  title: Title
+  description: Description
+  version: LATEST
+
+paths:
+  /api/get:
+    $ref: "./handlers.yaml#/paths/get"
